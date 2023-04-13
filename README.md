@@ -15,19 +15,25 @@ but not in ISO C)
 
 ### Flags
 
+`CPPFLAGS` = C preprocessor flags
+`CFLAGS` = C flags
+
 ```
--D_FORTIFY_SOURCE=3 -fstack-protector-strong \
+CPPFLAGS:=-D_FORTIFY_SOURCE=3 -Wmissing-include-dirs -Winvalid-utf8 -finput-charset=UTF-8
+```
+
+```
+CFLAGS:= -fstack-protector-strong \
 -std=gnu11 -Wall -Wextra -Wconversion -Wmissing-prototypes \
 -Wstrict-prototypes -Wunused-parameter -Wuninitialized -Wshadow \
 -Wbad-function-cast -Wcast-qual -Wdouble-promotion -Wformat=2 \
 -Wformat-overflow=2 -Wformat-signedness -Wformat-truncation=2 \
--Wnull-dereference -Winit-self -Wmissing-include-dirs -Wswitch-default \
+-Wnull-dereference -Winit-self -Wswitch-default \
 -Wstrict-overflow=4 -Warith-conversion -Wduplicated-branches -Wduplicated-cond \
--Wlogical-op -Wold-style-definition -Winvalid-utf8 -Wvla -Wwrite-strings \
+-Wlogical-op -Wold-style-definition -Wvla -Wwrite-strings \
 -Wunused-macros -Wundef -Wpointer-arith -Wfloat-equal -Walloc-zero -Wunused \
 -Werror -Wno-error=unused -Wno-error=unused-macros -Wno-error=float-equal \
 -Wno-error=unused-but-set-variable \
 -funsigned-char -fwrapv \
--finput-charset=UTF-8 \
 -Os
 ```
