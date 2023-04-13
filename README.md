@@ -2,8 +2,8 @@
 
 All GCC flags: https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
 
-Note: -Wpedantic is not included, because it always checks ISO C compatibility,
-even if -std=gnuXX is given (for example, it warns about stuff that is in POSIX
+Note: `-Wpedantic` is not included, because it always checks ISO C compatibility,
+even if `-std=gnuXX` is given (for example, it warns about stuff that is in POSIX
 but not in ISO C)
 
 `-Os` = `-O2` + size optimizations
