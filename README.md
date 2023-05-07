@@ -10,6 +10,7 @@ but not in ISO C)
 `-D_FORTIFY_SOURCE` enables some bounds checking
 `-ftrapv` kills the program on overflow, but is really slow
 `-fwrapv` make overflow always wrap (no UB)
+`-fanalyzer` runs GCC's static analyzer
 
 `_FORTIFY_SOURCE=3` is available since glibc 2.35 and GCC 12 or LLVM 9
 
@@ -31,10 +32,10 @@ CFLAGS:= -fstack-protector-strong \
 -Wformat-overflow=2 -Wformat-signedness -Wformat-truncation=2 \
 -Wnull-dereference -Winit-self -Wswitch-default \
 -Wstrict-overflow=4 -Warith-conversion -Wduplicated-branches -Wduplicated-cond \
--Wlogical-op -Wold-style-definition -Wvla -Wwrite-strings \
+-Wlogical-op -Wold-style-definition -Wvla -Wwrite-strings -Wxor-used-as-pow \
 -Wunused-macros -Wundef -Wpointer-arith -Wfloat-equal -Walloc-zero -Wunused \
 -Werror -Wno-error=unused -Wno-error=unused-macros -Wno-error=float-equal \
 -Wno-error=unused-but-set-variable \
--funsigned-char -fwrapv \
+-funsigned-char -fwrapv -fanalyzer \
 -Os
 ```
