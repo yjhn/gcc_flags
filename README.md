@@ -6,11 +6,11 @@ Note: `-Wpedantic` is not included, because it always checks ISO C compatibility
 even if `-std=gnuXX` is given (for example, it warns about stuff that is in POSIX
 but not in ISO C)
 
-`-Os` = `-O2` + size optimizations
-`-D_FORTIFY_SOURCE` enables some bounds checking
-`-ftrapv` kills the program on overflow, but is really slow
-`-fwrapv` make overflow always wrap (no UB)
-`-fanalyzer` runs GCC's static analyzer
+`-Os` = `-O2` + size optimizations  
+`-D_FORTIFY_SOURCE` enables some bounds checking  
+`-ftrapv` kills the program on overflow, but is really slow  
+`-fwrapv` makes overflow always wrap (no UB)  
+`-fanalyzer` runs GCC's static analyzer  
 
 `_FORTIFY_SOURCE=3` is available since glibc 2.35 and GCC 12 or LLVM 9
 
